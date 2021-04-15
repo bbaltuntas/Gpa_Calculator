@@ -49,7 +49,15 @@ class _NotHesaplamaArayuzuState extends State<NotHesaplamaArayuzu> {
       appBar: AppBar(
         title: Text("Ortalama Hesaplama"),
       ),
-      body: landscapeUygulamaGovdesi(),
+      body: OrientationBuilder(
+        builder: (context, orientation) {
+          if (orientation == Orientation.portrait) {
+            return portraitUygulamaGovdesi();
+          } else {
+            return landscapeUygulamaGovdesi();
+          }
+        },
+      ),
     );
   }
 
